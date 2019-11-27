@@ -63,7 +63,7 @@ class Album extends Component {
                   {/* End hero unit */}
                   <Grid container spacing={4}>
                     {cards.map(card => (
-                      <Grid item key={card} xs={12} sm={6} md={4} lg={3} xl={2} >
+                      <Grid item key={card} xs={12} sm={6} md={3} lg={2} xl={1} >
                         <Card className={classes.card}>
                           <CardMedia
                             className={classes.cardMedia}
