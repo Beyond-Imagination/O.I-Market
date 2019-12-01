@@ -6,8 +6,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
+import ImageSearchOutlinedIcon from '@material-ui/icons/ImageSearchOutlined';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Divider from '@material-ui/core/Divider';
@@ -50,6 +51,23 @@ const styles = theme => ({
   });
 
 class DrawerComponent extends Component {
+    state = {
+        menuItems: [
+            { 
+                icon: (<ImageSearchOutlinedIcon/>),
+                text: 'Search'
+            },
+            { 
+                icon: (<ImageOutlinedIcon/>),
+                text: 'Images'
+            },
+            { 
+                icon: (<AccountCircleOutlinedIcon/>),
+                text: 'Profile'
+            }
+        ],
+    };
+        
     render() {
         const { classes, theme } = this.props;
         return (
@@ -74,19 +92,10 @@ class DrawerComponent extends Component {
                 </div>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
+                    {this.state.menuItems.map((menuItem, index) => (
+                        <ListItem button key={menuItem.text}>
+                            <ListItemIcon>{menuItem.icon}</ListItemIcon>
+                            <ListItemText primary={menuItem.text} />
                         </ListItem>
                     ))}
                 </List>
