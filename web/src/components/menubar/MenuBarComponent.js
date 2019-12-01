@@ -36,8 +36,14 @@ const styles = theme => ({
         display: 'none',
     },
     loginButton: {
-        float: 'right'
-    }
+        marginRight: theme.spacing(2),
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    grow: {
+        flexGrow: 1,
+    },
   });
 
 class MenuBarComponent extends Component {    
@@ -65,8 +71,9 @@ class MenuBarComponent extends Component {
                     <Typography variant="h6" noWrap>
                         O.I Market
                     </Typography>
-                    <SearchBarComponent />
-                    <LoginButtonComponent className={classes.loginButton}/>
+                    <SearchBarComponent/>
+                    <div className={classes.grow} />
+                    <LoginButtonComponent />
                 </Toolbar>
             </AppBar>
         );
