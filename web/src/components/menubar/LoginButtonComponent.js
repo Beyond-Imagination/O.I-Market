@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -14,11 +13,9 @@ class LoginButtonComponent extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <Grid align-items-xs-center justify-xs-flex-end>
-                <Button href="#" variant="outlined" className={classes.link}>
-                    Login
-                </Button>
-            </Grid>
+            <Button href="#" variant="contained" className={classes.link}>
+                Login
+            </Button>
         );
     }
 }
