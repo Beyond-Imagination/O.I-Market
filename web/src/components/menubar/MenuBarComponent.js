@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 import SearchBarComponent from './SearchBarComponent';
+import LoginButtonComponent from './LoginButtonComponent';
 
 const drawerWidth = 240;
 
@@ -33,12 +34,20 @@ const styles = theme => ({
     },
     hide: {
         display: 'none',
-    }
+    },
+    loginButton: {
+        marginRight: theme.spacing(2),
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    grow: {
+        flexGrow: 1,
+    },
   });
 
 class MenuBarComponent extends Component {    
     render() {
-        console.log("MenuBarComponent refreshed", this.props.open)
         const { classes } = this.props;
         return (
             <AppBar
@@ -61,8 +70,10 @@ class MenuBarComponent extends Component {
                     </IconButton>
                     <Typography variant="h6" noWrap>
                         O.I Market
-                </Typography>
-                    <SearchBarComponent />
+                    </Typography>
+                    <SearchBarComponent/>
+                    <div className={classes.grow} />
+                    <LoginButtonComponent />
                 </Toolbar>
             </AppBar>
         );
