@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import MenuBarComponent from './MenuBarComponent';
 import DrawerComponent from './DrawerComponent';
 
+
 class MenuComponent extends Component {
     constructor(props) {
         super(props);
